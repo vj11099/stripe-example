@@ -1,2 +1,2 @@
 # stripe-example
-Sprite Implementation
+Stripe Implementation
