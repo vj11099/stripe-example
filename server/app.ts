@@ -1,13 +1,15 @@
 import "dotenv/config";
 import express, { json } from "express";
 import { connect } from "mongoose";
+import router from "./routes/routes.js";
 
 const app = express();
 
 app.use(json());
 
-const URI: string = process.env.MONGO_URI || "";
+app.use(router);
 
+const URI: string = process.env.MONGO_URI;
 //database connection
 connect(URI)
   .then((res) => {
