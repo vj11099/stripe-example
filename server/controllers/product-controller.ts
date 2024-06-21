@@ -16,7 +16,7 @@ export const createProduct = async (req: Request, res: Response) => {
       description,
       name,
     });
-    console.log(product);
+    return res.status(200).send("Item created!");
   } catch (err) {
     console.log(err);
   }
@@ -30,7 +30,7 @@ export const updateProduct = async (req: Request, res: Response) => {
       description,
       name,
     });
-    console.log(product);
+    return res.status(200).send("Item updated!");
   } catch (err) {
     console.log(err);
   }
@@ -42,7 +42,7 @@ export const deleteProduct = async (req: Request, res: Response) => {
     const product_item = await Product.deleteProduct({
       productId: product,
     });
-    console.log(product_item);
+    return res.status(200).send("Item deleted!");
   } catch (err) {
     console.log(err);
   }

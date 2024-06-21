@@ -35,7 +35,10 @@ productSchema.statics.createProduct = async function (
       description,
       productId,
     });
-    return newProduct;
+    if (newProduct) {
+      return newProduct;
+    }
+    throw Error("Something went wrong!");
   } catch (error) {
     console.error("Error creating product:", error);
     return null;
@@ -56,7 +59,10 @@ productSchema.statics.updateProduct = async function (
         name,
       }
     );
-    return updatedRecord;
+    if (updatedRecord) {
+      return updatedRecord;
+    }
+    throw Error("Item doesn't exist!");
   } catch (err) {
     console.error("Error Updating the product:", err);
   }
@@ -70,10 +76,13 @@ productSchema.statics.deleteProduct = async function (
 ): Promise<IProduct | null> {
   try {
     const { productId } = data;
-    const updatedRecord = this.findOneAndDelete({ productId });
-    return updatedRecord;
+    const deletedItem = this.findOneAndDelete({ productId });
+    if (deletedItem) {
+      return deletedItem;
+    }
+    throw Error("Item doesn't exist!");
   } catch (err) {
-    console.error("Error Updating the product:", err);
+    console.error("Error deleting the product:", err);
   }
   return;
 };
