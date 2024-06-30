@@ -12,7 +12,6 @@ router.get("/", (req: Request, res: Response) => {
 });
 
 router.post("/", (req: Request, res: Response) => {
-  console.log(req.body.data);
   switch (true) {
     case req.body.type === "product.created":
       createProduct(req, res);
