@@ -12,3 +12,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.nav-bar {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 800px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* .nav-items nav{
+
+} */
+
+.theme-mode-button {
+  flex: none;
+}
