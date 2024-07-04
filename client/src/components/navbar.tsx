@@ -48,7 +48,7 @@ const components: {
 
 const NavBar: React.FC = () => {
   return (
-    <div className="nav-bar">
+    <div className="nav-bar sticky z-[2] dark:bg-black border-b-stone-200/50 border-b-2 dark:border-b-stone-800 bg-white top-0">
       <div className="nav-items">
         <NavigationMenu>
           <NavigationMenuList>
